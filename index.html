@@ -5,115 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praneeth Behara | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f0f2f5;
-      --text: #1a1a1a;
-      --accent: #ffd700;
-      --nav-bg: #002244;
-      --header-gradient: linear-gradient(90deg, #003366, #0057b8);
-    }
-    body.dark {
-      --bg: #121212;
-      --text: #ffffff;
-      --nav-bg: #1e1e1e;
-      --header-gradient: linear-gradient(90deg, #222, #333);
-    }
     body {
-      background-color: var(--bg);
-      color: var(--text);
       font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
       margin: 0;
-      transition: background 0.4s, color 0.4s;
+      color: #1a1a1a;
     }
     header {
-      background: var(--header-gradient);
-      color: #fff;
+      background: linear-gradient(90deg, #003366, #0057b8);
+      color: white;
       text-align: center;
       padding: 60px 20px 40px;
     }
     header h1 {
       font-size: 2.5rem;
     }
-    .typewriter {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: var(--accent);
-    }
     nav {
-      background: var(--nav-bg);
+      background: #002244;
       padding: 10px;
     }
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
     nav ul li {
       margin: 0 15px;
     }
     nav ul li a {
-      color: var(--bg);
+      color: #f0f2f5;
       text-decoration: none;
       font-weight: 500;
     }
     nav ul li a:hover {
-      color: var(--accent);
-    }
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
+      color: #ffd700;
     }
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .profile {
       display: flex;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
-      background: #ffffff10;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     .profile img {
       width: 160px;
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     footer {
-      background: var(--nav-bg);
-      color: var(--bg);
+      background: #002244;
+      color: #f0f2f5;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
     footer a {
-      color: var(--accent);
+      color: #ffd700;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="document.body.classList.toggle('dark')">🌗 Theme</button>
   <header>
     <h1>Praneeth Behara</h1>
-    <div class="typewriter" id="typewriter"></div>
+    <p>Salesforce Developer | Data Analyst | Problem Solver</p>
   </header>
   <nav>
     <ul>
@@ -122,7 +89,7 @@
     </ul>
   </nav>
   <div class="container">
-    <div class="profile" data-aos="fade-up">
+    <div class="profile">
       <img src="profile.jpg" alt="Praneeth Behara">
       <div>
         <h2>Welcome!</h2>
@@ -135,33 +102,5 @@
   <footer>
     <p>© 2025 Praneeth Behara | <a href="mailto:praneeth.cdm@gmail.com">Email Me</a></p>
   </footer>
-
-  <!-- JS for animations and typewriter -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const phrases = ["Salesforce Developer", "Data Analyst", "Problem Solver"];
-    let i = 0, j = 0, current = '', isDeleting = false;
-    const el = document.getElementById("typewriter");
-    function type() {
-      if (i < phrases.length) {
-        let full = phrases[i];
-        current = isDeleting ? full.substring(0, j--) : full.substring(0, j++);
-        el.innerHTML = current;
-        if (!isDeleting && j === full.length) {
-          isDeleting = true;
-          setTimeout(type, 1200);
-        } else if (isDeleting && j === 0) {
-          isDeleting = false;
-          i = (i + 1) % phrases.length;
-          setTimeout(type, 500);
-        } else {
-          setTimeout(type, isDeleting ? 50 : 100);
-        }
-      }
-    }
-    document.addEventListener("DOMContentLoaded", type);
-  </script>
 </body>
 </html>
-
