@@ -5,100 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praneeth Behara | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
+    :root {
+      --bg: #f0f2f5;
+      --text: #1a1a1a;
+      --accent: #ffd700;
+      --nav-bg: #002244;
+      --header-gradient: linear-gradient(90deg, #003366, #0057b8);
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #ffffff;
+      --nav-bg: #1e1e1e;
+      --header-gradient: linear-gradient(90deg, #222, #333);
     }
     body {
-      background-color: #f5f9ff;
-      color: #1a1a1a;
-      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      transition: background 0.4s, color 0.4s;
     }
     header {
-      background-color: #0057b8;
+      background: var(--header-gradient);
       color: #fff;
-      padding: 20px 0;
       text-align: center;
+      padding: 60px 20px 40px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    .typewriter {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: var(--accent);
+    }
+    nav {
+      background: var(--nav-bg);
+      padding: 10px;
     }
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      background: #003f8a;
+      padding: 0;
+      margin: 0;
     }
     nav ul li {
       margin: 0 15px;
     }
     nav ul li a {
-      color: white;
+      color: var(--bg);
       text-decoration: none;
-      font-weight: bold;
-      padding: 15px;
-      display: inline-block;
+      font-weight: 500;
     }
     nav ul li a:hover {
-      background: #004caa;
+      color: var(--accent);
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
     }
     .container {
       max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    .bio {
-      background: white;
+      margin: 40px auto;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: #ffffff10;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .profile img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
     footer {
+      background: var(--nav-bg);
+      color: var(--bg);
       text-align: center;
       padding: 20px;
-      background: #003f8a;
-      color: white;
       margin-top: 40px;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="document.body.classList.toggle('dark')">🌗 Theme</button>
   <header>
     <h1>Praneeth Behara</h1>
-    <p>Salesforce Developer | Data Analyst | Tech Enthusiast</p>
+    <div class="typewriter" id="typewriter"></div>
   </header>
-
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
       <li><a href="certificates.html">Certificates</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
   <div class="container">
-    <div class="bio">
-      <h2>Welcome!</h2>
-      <p>
-        I'm Praneeth Behara, a final-year B.Tech student at MVGR College of Engineering,
-        specializing in IoT, Cybersecurity, and Blockchain. With a strong foundation in programming (Java, Python),
-        web technologies (HTML, CSS, React), and platforms like Salesforce and Tableau,
-        I bring hands-on experience from internships across AI, full-stack development, and CRM systems.
-      </p>
-      <p>
-        I’m currently seeking entry-level roles in <strong>Salesforce Development</strong>,
-        <strong>Data Analytics</strong>, <strong>IT Support</strong>, or <strong>Software Development</strong>.
-        Passionate about solving real-world problems using data-driven insights and smart automation,
-        I value continuous learning, effective teamwork, and delivering business-aligned results.
-      </p>
+    <div class="profile" data-aos="fade-up">
+      <img src="profile.jpg" alt="Praneeth Behara">
+      <div>
+        <h2>Welcome!</h2>
+        <p>I’m Praneeth Behara, a final-year B.Tech student specializing in IoT, Cybersecurity, and Blockchain at MVGR College of Engineering.</p>
+        <p>Skilled in Salesforce, Python, Java, Tableau, and web development, I aim to build smart tech-driven solutions.</p>
+        <p><strong>📞</strong> +91 81795 93489<br><strong>📩</strong> <a href="mailto:praneeth.cdm@gmail.com">praneeth.cdm@gmail.com</a></p>
+      </div>
     </div>
   </div>
-
   <footer>
-    <p>© 2025 Praneeth Behara | <a href="mailto:praneeth.cdm@gmail.com" style="color:white; text-decoration: underline;">Email Me</a></p>
+    <p>© 2025 Praneeth Behara | <a href="mailto:praneeth.cdm@gmail.com">Email Me</a></p>
   </footer>
+
+  <!-- JS for animations and typewriter -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const phrases = ["Salesforce Developer", "Data Analyst", "Problem Solver"];
+    let i = 0, j = 0, current = '', isDeleting = false;
+    const el = document.getElementById("typewriter");
+    function type() {
+      if (i < phrases.length) {
+        let full = phrases[i];
+        current = isDeleting ? full.substring(0, j--) : full.substring(0, j++);
+        el.innerHTML = current;
+        if (!isDeleting && j === full.length) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % phrases.length;
+          setTimeout(type, 500);
+        } else {
+          setTimeout(type, isDeleting ? 50 : 100);
+        }
+      }
+    }
+    document.addEventListener("DOMContentLoaded", type);
+  </script>
 </body>
 </html>
+
